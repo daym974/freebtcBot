@@ -82,11 +82,11 @@ setInterval(function(){
 	if(counter < 300000){
 		
 	if(counter < 100000){
-		changeBet('hi');
+		switchBet('hi');
 	}else if(100000 < counter <200000){
-		changeBet('lo');
+		switchBet('lo');
 	}else
-		changeBet('alternate');
+		switchBet('alternate');
 
 
 		$('#start_autobet').get(0).click();
