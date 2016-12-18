@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Autobet
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
-// @author       You
+// @author       Daym
 // @match        https://freebitco.in/?op=home
 // @grant        none
 // ==/UserScript==
@@ -11,11 +11,11 @@
 
 /**
 switchBet
-@param String value ('HI','LO','ALTERNATE')
+@param String value ('hi','lo','alternate')
 Coche le bet choisi
 */
 function switchBet(value){
-	$('#autobet_bet_' + newValue).get(0).click();
+	$('#autobet_bet_' + value).get(0).click();
 }
 
 /**
@@ -69,18 +69,34 @@ Déroulement des fonctions
 */
 function main(){
 
+var counter = 0;
+
 changeRollCount(20);
 switchBet('alternate');
 $(document).ready(function(){
 	onLoseConf();
 });
+
+setInterval(function(){ 
+
+	if(counter < 300000){
+		
+	if(counter < 100000){
+		changeBet('hi');
+	}else if(100000 < counter <200000){
+		changeBet('lo');
+	}else
+		changeBet('alternate');
+
+
+		$('#start_autobet').get(0).click();
+		counter+=6500;
+	}else{
+		alert('Game finished. Please wait before relauching autobet...');
+	}
+},6500);
 }
 
 
 main();
 
-setInterval(function(){ 
-
-startBet();
-    
-}, 6500);
