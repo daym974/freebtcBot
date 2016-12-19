@@ -153,7 +153,7 @@ function startAutobet(){
             if(counter < 300000){
                 randomBet();
                 startBet();
-                counter+=6500;
+                counter+=30000;
             }else{
                 playing = false;
                 alert('Game finished. Please wait before relauching autobet...');
