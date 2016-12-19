@@ -97,8 +97,8 @@ function maxRolls(){
     }
     count = parseInt(count/3);
     console.log("Max rolls: " + count + "\n");
-    if(count < 20){
-        alert("Not enough funds to use autobet! You need to reach 20 rolls at least!");
+    if(count < 10){
+        alert("Not enough funds to use autobet! You need to reach 10 rolls at least!");
         playing = false;
     }
     return count;
